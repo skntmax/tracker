@@ -3,8 +3,8 @@
      "version":2,
      "builds":[
          {
-             "use":"./src/server.js"
-       
+             "src":"./src/server.js",
+              "use":"./"
          }
      ],
      "routes":[
