@@ -19,15 +19,15 @@ app.use(cors({credentials: true, origin: true}));
 import {body} from './template.js'
 
 import { features } from 'process';
-
-app.get('/' ,(req,res)=>{
+let router = express.Router()
+router.get('/' ,(req,res)=>{
      
 res.send(`<h1> home page  </h1> `)
      
 })
 
 
-app.post('/get-location' ,(req,res)=>{
+router.post('/get-location' ,(req,res)=>{
        console.log("req.query" , req.body )
         let longitude = req.body.lg
         let lattitude = req.body.lt
@@ -45,13 +45,13 @@ app.post('/get-location' ,(req,res)=>{
 })
 
 
-app.get('/image' ,(req,res)=>{
-     res.send(`
-      
-     `)
+router.get('/image' ,(req,res)=>{
+     res.send({
+           message:"idk"
+     })
 })
 
-
+app.use(router)
 module.exports = app
 
 // app.listen(7000, ()=>{
