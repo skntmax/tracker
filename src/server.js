@@ -52,6 +52,8 @@ app.get('/image' ,(req,res)=>{
 })
 
 
-app.listen(7000, ()=>{
-     console.log("server started at 7000 ");
-} )
+module.exports = app
+
+// app.listen(7000, ()=>{
+//      console.log("server started at 7000 ");
+// } )
