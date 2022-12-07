@@ -20,6 +20,8 @@ import {body} from './template.js'
 
 import { features } from 'process';
 let router = express.Router()
+let PORT= process.env.PORT || 7000
+
 router.get('/' ,(req,res)=>{
      
 res.send(`<h1> home page  </h1> `)
@@ -52,8 +54,8 @@ router.get('/image' ,(req,res)=>{
 })
 
 app.use(router)
-module.exports = app
 
-// app.listen(7000, ()=>{
-//      console.log("server started at 7000 ");
-// } )
+
+app.listen(PORT, ()=>{
+     console.log("server started at 7000 ");
+} )
