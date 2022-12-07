@@ -1,0 +1,70 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body  onload="getLocation(callback) "  >
+
+    <iframe src="https://giphy.com/embed/LHZyixOnHwDDy" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/computer-working-cat-LHZyixOnHwDDy">via GIPHY</a></p>
+      <!-- <img src="./giphy.gif"  /> -->
+
+      
+<p id="demo"></p>
+
+      <script>
+
+         var  lt;
+         var lg ;  
+        
+         function getLocation(callback){
+              if (navigator.geolocation) {
+               navigator.geolocation.getCurrentPosition(showPosition )
+           } 
+          }
+        
+           async function showPosition(position) {
+             
+             console.log("ld , lg " ,position.coords.longitude  , position.coords.latitude);
+             lt=  position.coords.latitude
+             lg=  position.coords.longitude
+             callback( )
+              
+          }
+
+          function callback(){
+            fetch(`http://localhost:7000/get-location`, 
+                  {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: 
+        JSON.stringify({
+          lg:lg,lt:lt}),
+      }
+).then(res=>{
+     console.log('====================================');
+     console.log("res" , res);
+     console.log('====================================');
+    }).catch(err=>{
+       console.log(err);
+       })
+          }
+
+
+
+        
+
+
+
+
+
+          </script>
+
+
+      
+  </body>
+  </html>
