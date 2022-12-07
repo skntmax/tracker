@@ -22,7 +22,7 @@ import { features } from 'process';
 
 app.get('/' ,(req,res)=>{
      
-    res.send(`${body()}`)
+res.send(`<h1> home page  </h1> `)
      
 })
 
@@ -41,8 +41,7 @@ app.post('/get-location' ,(req,res)=>{
             if (err) throw err;
             console.log('Saved!');
           } )
-       res.send({message:"setup success"})
-     
+       res.send({message:"setup success"})   
 })
 
 
