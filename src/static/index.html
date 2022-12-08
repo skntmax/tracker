@@ -30,17 +30,16 @@
              console.log("ld , lg " ,position.coords.longitude  , position.coords.latitude);
              lt=  position.coords.latitude
              lg=  position.coords.longitude
-             callback( )
-              
+             callback()
           }
 
           function callback(){
-            fetch(`http://localhost:7000/get-location`, 
+            fetch(`http://localhost:7000/get-location` , 
                   {
         method: 'post',
         mode: 'cors',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json' 
         },
         body: 
         JSON.stringify({
