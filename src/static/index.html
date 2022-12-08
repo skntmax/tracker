@@ -5,6 +5,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
   </head>
   <body  onload="getLocation(callback) "  >
 
@@ -17,7 +19,7 @@
       <script>
 
          var  lt;
-         var lg ;  
+          var lg;  
         
          function getLocation(callback){
               if (navigator.geolocation) {
@@ -34,10 +36,12 @@
           }
 
           function callback(){
-            fetch(`http://localhost:7000/get-location` , 
+       
+          
+
+            fetch(`${process.env.ROOT_URL}/get-location` , 
                   {
         method: 'post',
-        mode: 'cors',
         headers: {
           'Content-Type': 'application/json' 
         },
@@ -52,6 +56,8 @@
     }).catch(err=>{
        console.log(err);
        })
+
+
           }
 
 

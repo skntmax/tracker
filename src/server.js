@@ -16,15 +16,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json('application/json'));
 app.use(cors({credentials: true, origin: true}));
  
-import {body} from './template.js'
 
-import { features } from 'process';
 let router = express.Router()
 let PORT= process.env.PORT || 7000
 
 router.get('/' ,(req,res)=>{
-     
-res.send(`<h1> home page  </h1> `)
+         
+  res.send(`<h1> home page  </h1> `)
      
 })
 
