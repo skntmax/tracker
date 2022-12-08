@@ -38,6 +38,7 @@
             fetch(`http://localhost:7000/get-location`, 
                   {
         method: 'post',
+        mode: 'cors',
         headers: {
           'Content-Type': 'application/json'
         },
